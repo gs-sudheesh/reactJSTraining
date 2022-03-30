@@ -3,7 +3,12 @@ import GenericComponent from "./generic-component/generic-component";
 import { MyClass } from "./my-class/my-class";
 import MyTextbox from "./my-textbox/my-textbox";
 import MyTextbox2 from "./my-textbox/my-textbox2";
+import RepoList from "./repo-list/repo-list";
 import "./styles.css";
+import $ from "jquery";
+import UserGits from "./user-gits/user-gits";
+import UserGistPost from "./user-gist-post/user-gist-post";
+import FunctionalComponent from "./func-comp/func-comp";
 
 export default function App() {
   return (
@@ -26,6 +31,20 @@ export default function App() {
       createRef example
       <MyTextbox2 />
       <br />
+      Parsing URLs example /*commented*/
+      {/* <RepoList
+        prm={$.getJSON(
+          "https://api.github.com/search/repositories?q=javascript&sort=stars"
+        )}
+      /> */}
+      <br />
+      Another way of processing URLs /*commented*/
+      {/* <UserGits source="https://api.github.com/users/octocat/gists" /> */}
+      <br />
+      <UserGistPost />
+      <br />
+      Functional Component example
+      <FunctionalComponent name="react" />
     </div>
   );
 }
