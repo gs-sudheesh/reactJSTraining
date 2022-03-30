@@ -5,12 +5,12 @@ export default class MyTextbox2 extends Component {
     super();
     //this.state = {liked:false}
     this.handleClick = this.handleClick.bind(this);
-    this.myTextInput = createRef();
+    this.myTextInput2 = createRef();
     //creates a pointer for `myTextInput`
   }
   handleClick() {
-    this.myTextInput.current.focus();
-    console.log("data: ", this.myTextInput.current.value);
+    this.myTextInput2.current.focus();
+    console.log("data: ", this.myTextInput2.current.value);
   }
   /**
    * Never use `id`, instead use react specific
@@ -19,11 +19,12 @@ export default class MyTextbox2 extends Component {
   render() {
     return (
       <div>
-        <input type="date" ref={this.myTextInput} />
+        <input type="date" ref={this.myTextInput2} />
         <br />
         <input
           type="button"
           value="Bring back focus"
+          className="btn btn-warning"
           onClick={this.handleClick}
         />
       </div>
